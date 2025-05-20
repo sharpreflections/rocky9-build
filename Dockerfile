@@ -9,7 +9,7 @@ ARG qt_prefix=/p
 # Base Image
 ###############################################################################
 
-FROM quay.io/sharpreflections/centos7-build-base AS base
+FROM quay.io/sharpreflections/rocky9-build-base AS base
 
 ###############################################################################
 # Builder Image
@@ -77,8 +77,8 @@ RUN yum -y upgrade \
 && make altinstall \
 # install numpy and scipy python packages
 # python3
-&& pip3 install numpy \
-&& pip3 install scipy
+&& pip install numpy \
+&& pip install scipy
 
 ###############################################################################
 # Final Image
